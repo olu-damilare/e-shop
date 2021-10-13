@@ -1,6 +1,7 @@
 package com.ecommerce.shop.data.model;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
@@ -21,9 +22,11 @@ public class Product {
     private Currency currency;
     private String details;
 
-    @ElementCollection
+    @ElementCollection()
+    @ToString.Exclude
     private List<String> imageUrl;
 
     @OneToMany
+    @ToString.Exclude
     private List<Feedback> feedbacks;
 }

@@ -22,4 +22,14 @@ public class ProductServiceImpl implements ProductService{
     public List<Product> finAll() {
         return productRepository.findAll();
     }
+
+    @Override
+    public Product findById(Long id) {
+        return null;
+    }
+
+    @Override
+    public void deleteById(Long id) {
+
+    }
 }
