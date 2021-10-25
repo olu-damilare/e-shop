@@ -137,7 +137,7 @@
 <!--Slider end	-->
 
 <!--product start-->
-	<div id="fh5co-product" th:each="product : ${products}">
+	<div id="fh5co-product">
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
@@ -148,7 +148,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-4 text-center animate-box">
-					<div class="product">
+					<div class="product" th:each="product : ${products}">
 						<div class="product-grid" th:style="'background-image:url('+${product.getImageUrl()[0]}+');'">
 							<div class="inner">
 								<p>
@@ -158,8 +158,8 @@
 							</div>
 						</div>
 						<div class="desc">
-							<h3><a href="single.html" th:value = "${product.getName()}"></a></h3>
-							<span class="price" th:value = "${product.getPrice()}"></span>
+							<h3><a href="single.html" th:text = "${product.getName()}"></a></h3>
+							<span class="price" th:text = "${product.getPrice()}"></span>
 						</div>
 					</div>
 				</div>
