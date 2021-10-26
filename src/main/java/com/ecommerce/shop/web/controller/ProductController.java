@@ -19,7 +19,7 @@ public class ProductController {
 
     @GetMapping("/")
     public List<Product> getAll(){
-        return productServiceImpl.finAll();
+        return productServiceImpl.findAll();
     }
 
     @PostMapping("/")

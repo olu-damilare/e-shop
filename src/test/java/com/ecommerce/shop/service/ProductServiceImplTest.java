@@ -23,6 +23,7 @@ class ProductServiceImplTest {
         productServiceImpl = new ProductServiceImpl();
         MockitoAnnotations.openMocks(this);
     }
+
     @Test
     void saveProductMockTest(){
         Product product = new Product();
