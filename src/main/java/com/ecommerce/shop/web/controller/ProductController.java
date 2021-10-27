@@ -1,5 +1,6 @@
 package com.ecommerce.shop.web.controller;
 
+import com.ecommerce.shop.data.dto.ProductUpdateDto;
 import com.ecommerce.shop.data.model.Product;
 import com.ecommerce.shop.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
@@ -38,6 +39,16 @@ public class ProductController {
         productServiceImpl.deleteById(id);
 
         return ResponseEntity.noContent().build();
+
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<?> updateProduct(@PathVariable("id") Long id, @RequestBody ProductUpdateDto productDto){
+        try {
+          return ResponseEntity.ok().body(productServiceImpl.updateProduct(id, productDto));
+        }catch(Exception e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
 
     }
 
