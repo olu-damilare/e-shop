@@ -149,8 +149,8 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-4 text-center animate-box">
-					<div class="product" th:each="product : ${products}">
+				<div class="col-md-4 text-center animate-box" th:each="product : ${products}">
+					<div class="product" >
 						<div class="product-grid" th:style="'background-image:url('+${product.getImageUrl()[0]}+');'">
 							<div class="inner">
 								<p>
