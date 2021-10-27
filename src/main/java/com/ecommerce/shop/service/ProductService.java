@@ -1,5 +1,6 @@
 package com.ecommerce.shop.service;
 
+import com.ecommerce.shop.data.dto.ProductUpdateDto;
 import com.ecommerce.shop.data.model.Product;
 
 import java.util.List;
@@ -10,4 +11,5 @@ public interface ProductService {
     List<Product> findAll();
     Product findById(Long id);
     void deleteById(Long id);
+    Product updateProduct(Long id, ProductUpdateDto productDto);
 }
